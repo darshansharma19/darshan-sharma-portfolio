@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Award, Trophy, FileBadge, Star, Medal, GraduationCap } from 'lucide-react';
+import { Trophy, Star, GraduationCap, Code2, Award } from 'lucide-react';
 
 interface Achievement {
   title: string;
@@ -10,49 +10,51 @@ interface Achievement {
   color: string;
 }
 
-interface Certification {
-  name: string;
-  issuer: string;
-  year: string;
-}
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-
 const Achievements = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   const achievements: Achievement[] = [
     {
-      title: 'First Prize - Science Exhibition',
-      issuer: 'Inter-College Competition',
-      date: '2023',
-      description: 'Secured First Prize at the Inter-College Science Exhibition, showcasing innovative problem-solving and technical skills through a standout project presentation.',
-      icon: Trophy,
+      title: 'Winner of 8+ Hackathons',
+      issuer: 'Multiple Domains',
+      date: '2023-2025',
+      description: 'Achieved top positions in 8+ hackathons spanning AI/ML, Web Development, and IoT, demonstrating innovation, teamwork, and rapid problem-solving skills.',
+      icon: Award,
       color: '#FFB800',
     },
     {
-      title: 'Educator',
-      issuer: 'Unacademy',
-      date: 'Ongoing',
-      description: 'Helping students improve their problem-solving abilities, coding skills, and mathematical understanding through structured learning programs.',
+      title: 'Co-Host - Solana & Avalanche Events',
+      issuer: 'Indore Tech Community',
+      date: '2024-2025',
+      description: 'Co-hosted blockchain-focused events in Indore for Solana and Avalanche communities, organizing workshops, hackathons, and networking sessions for developers and enthusiasts.',
+      icon: Star,
+      color: '#FF0055',
+    },
+    {
+      title: 'Team Lead - Google Developer Student Club',
+      issuer: 'IPS Academy, Indore',
+      date: '2024-2025',
+      description: 'Led the college Google Developer Student Club team, coordinating tech events, mentorship programs, and project initiatives to encourage practical learning in Web3, AI, and Full-Stack development.',
       icon: GraduationCap,
       color: '#00F0FF',
     },
     {
-      title: 'Core Team Member',
-      issuer: 'NRI Summit 2024',
+      title: 'Top 5 in National AI Challenge',
+      issuer: 'AI Society of India',
       date: '2024',
-      description: 'Selected as a Core Team member for the prestigious NRI Summit, contributing to event organization and management.',
-      icon: Star,
-      color: '#FF0055',
+      description: 'Ranked among the top 5 participants nationwide for developing an intelligent recommendation system using Python and TensorFlow.',
+      icon: Trophy,
+      color: '#FFB800',
     },
-  ];
-
-  const certifications: Certification[] = [
-    { name: 'Data Science', issuer: 'IIT Delhi', year: '2024' },
-    { name: 'Web Development', issuer: 'Universal', year: '2023' },
-    { name: 'AWS Cloud Fundamentals', issuer: 'Amazon Web Services', year: '2024' },
+    {
+      title: 'Contributor to Open-Source AI Projects',
+      issuer: 'GitHub / Community',
+      date: '2023-2025',
+      description: 'Contributed to multiple open-source AI/ML and Python projects, improving model performance, documentation, and code quality while collaborating with global developers.',
+      icon: Code2,
+      color: '#FF6F61',
+    },
   ];
 
   useEffect(() => {
@@ -111,7 +113,7 @@ const Achievements = () => {
               }`}
               style={{ transitionDelay: `${idx * 150}ms` }}
             >
-              <div 
+              <div
                 className="h-full bg-[#111] border border-[#222] rounded-lg p-6 hover:border-[#00F0FF] transition-all duration-300"
                 onMouseEnter={(e) => {
                   e.currentTarget.style.borderColor = achievement.color;
@@ -121,7 +123,7 @@ const Achievements = () => {
                 }}
               >
                 {/* Icon */}
-                <div 
+                <div
                   className="w-14 h-14 rounded-lg bg-[#0a0a0a] border border-[#222] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300"
                   style={{ borderColor: `${achievement.color}30` }}
                 >
@@ -130,12 +132,12 @@ const Achievements = () => {
 
                 {/* Content */}
                 <div className="mb-3">
-                  <span 
+                  <span
                     className="font-mono text-xs px-2 py-1 rounded border"
-                    style={{ 
+                    style={{
                       color: achievement.color,
                       borderColor: `${achievement.color}30`,
-                      backgroundColor: `${achievement.color}10`
+                      backgroundColor: `${achievement.color}10`,
                     }}
                   >
                     {achievement.date}
@@ -145,60 +147,21 @@ const Achievements = () => {
                 <h3 className="font-heading text-lg font-semibold text-[#E0E0E0] mb-1">
                   {achievement.title}
                 </h3>
-                
-                <p className="text-[#00F0FF] text-sm mb-3">
-                  {achievement.issuer}
-                </p>
-                
-                <p className="text-[#888] text-sm leading-relaxed">
-                  {achievement.description}
-                </p>
+
+                <p className="text-[#00F0FF] text-sm mb-3">{achievement.issuer}</p>
+
+                <p className="text-[#888] text-sm leading-relaxed">{achievement.description}</p>
 
                 {/* Decorative Corner */}
-                <div 
+                <div
                   className="absolute top-0 right-0 w-8 h-8 opacity-0 group-hover:opacity-100 transition-opacity"
-                  style={{ 
-                    background: `linear-gradient(135deg, transparent 50%, ${achievement.color}20 50%)` 
+                  style={{
+                    background: `linear-gradient(135deg, transparent 50%, ${achievement.color}20 50%)`,
                   }}
                 />
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Certifications Section */}
-        <div
-          className={`transition-all duration-700 delay-500 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
-        >
-          <div className="text-center mb-8">
-            <h3 className="font-heading text-2xl font-semibold text-[#E0E0E0] mb-2">
-              CERTIFICATIONS
-            </h3>
-            <p className="text-[#666] text-sm">Professional credentials and certifications</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-4">
-            {certifications.map((cert) => (
-              <div
-                key={cert.name}
-                className="group flex items-center gap-4 p-4 bg-[#111] border border-[#222] rounded-lg hover:border-[#00F0FF] transition-all duration-300"
-              >
-                <div className="p-2 rounded-lg bg-[#0a0a0a] border border-[#222] group-hover:border-[#00F0FF] transition-colors">
-                  <FileBadge size={20} className="text-[#00F0FF]" />
-                </div>
-                <div>
-                  <h4 className="font-medium text-[#E0E0E0] group-hover:text-[#00F0FF] transition-colors">
-                    {cert.name}
-                  </h4>
-                  <p className="text-sm text-[#666]">
-                    {cert.issuer} • {cert.year}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
 
         {/* Photo Gallery */}
@@ -249,31 +212,6 @@ const Achievements = () => {
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Stats Row */}
-        <div
-          className={`mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 transition-all duration-700 delay-800 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
-        >
-          {[
-            { icon: Trophy, value: '1st', label: 'Science Exhibition', color: '#FFB800' },
-            { icon: Medal, value: '500+', label: 'Questions Evaluated', color: '#00F0FF' },
-            { icon: Award, value: '3+', label: 'Certifications', color: '#FF0055' },
-            { icon: Star, value: '9.0', label: 'CGPA', color: '#00F0FF' },
-          ].map((stat) => (
-            <div
-              key={stat.label}
-              className="text-center p-4 bg-[#111] border border-[#222] rounded-lg"
-            >
-              <stat.icon size={24} style={{ color: stat.color }} className="mx-auto mb-2" />
-              <div className="font-heading text-2xl font-bold" style={{ color: stat.color }}>
-                {stat.value}
-              </div>
-              <div className="font-mono text-xs text-[#666]">{stat.label}</div>
-            </div>
-          ))}
         </div>
       </div>
     </section>

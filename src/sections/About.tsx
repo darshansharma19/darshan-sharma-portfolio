@@ -25,8 +25,8 @@ const About = () => {
   }, []);
 
   const stats = [
-    { icon: Briefcase, value: '2+', label: 'Years Experience', color: '#00F0FF' },
-    { icon: Award, value: '10+', label: 'Projects Completed', color: '#FF0055' },
+    { icon: Briefcase, value: '1+', label: 'Years Experience', color: '#00F0FF' },
+    { icon: Award, value: '15+', label: 'Projects Completed', color: '#FF0055' },
     { icon: GraduationCap, value: '9.0', label: 'CGPA', color: '#00F0FF' },
   ];
 
@@ -165,7 +165,7 @@ const About = () => {
                 CORE TECHNOLOGIES
               </span>
               <div className="flex flex-wrap gap-2">
-                {['React', 'Next.js', 'Node.js', 'Python', 'AI/ML', 'TypeScript'].map((tech) => (
+                {['React', 'Next.js', 'Node.js', 'TypeScript', 'Python', 'AI/ML', 'PostgreSQL', 'MongoDB'].map((tech) => (
                   <span
                     key={tech}
                     className="px-3 py-1 bg-[#111] border border-[#222] rounded text-xs font-mono text-[#888] hover:border-[#00F0FF] hover:text-[#00F0FF] transition-all duration-300"

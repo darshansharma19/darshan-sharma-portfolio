@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { ExternalLink, Github, X, Code2, Video, Shield } from 'lucide-react';
+import { ExternalLink, Github, X, Code2, Shield } from 'lucide-react';
 
 interface Project {
   id: string;
@@ -19,79 +19,60 @@ const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  const projects: Project[] = [
-    {
-      id: 'code-with-buddy',
-      title: 'Code with Buddy',
-      shortDesc: 'Live coding platform with video chat and collaborative editor',
-      fullDesc: 'A comprehensive live coding platform that enables developers to collaborate in real-time. Users can share a special URL to invite others, collaborate on code with a built-in editor, communicate via video chat, sketch ideas on a shared whiteboard, and record entire sessions for later reference.',
-      technologies: ['JavaScript', 'ReactJS', 'CodeMirror', 'Socket.io', 'PeerJS', 'WebRTC'],
-      features: [
-        'Real-time collaborative code editing',
-        'Integrated video chat using WebRTC',
-        'Multi-language code compilation',
-        'Interactive shared whiteboard',
-        'Session recording and download',
-        'Unique URL generation for rooms',
-      ],
-      icon: Code2,
-      color: '#00F0FF',
-      githubUrl: 'https://github.com/darshansharma19',
-    },
-    {
-      id: 'protect-farm',
-      title: 'Protect-Farm',
-      shortDesc: 'IoT-based solution to protect farms from wild animals',
-      fullDesc: 'An innovative IoT-based solution that uses computer vision and AI to protect farms from wild animals. The system detects animal presence using sensors and cameras, then triggers humane deterrents to keep animals away without causing harm. This approach helps farmers reduce crop damage by up to 30% while preserving wildlife.',
-      technologies: ['YOLO v8', 'Ultralytics', 'OpenCV', 'Python', 'ReactJS', 'IoT Sensors'],
-      features: [
-        'Real-time animal detection using YOLO v8',
-        'Humane deterrent activation system',
-        'Mobile alerts and notifications',
-        'Dashboard for monitoring and analytics',
-        'Replaces harmful electric fences',
-        'Eco-friendly wildlife protection',
-      ],
-      icon: Shield,
-      color: '#FF0055',
-      githubUrl: 'https://github.com/darshansharma19',
-    },
-    {
-      id: 'flavour-trail',
-      title: 'Flavour Trail',
-      shortDesc: 'Full-stack restaurant website with reservation system',
-      fullDesc: 'A visually appealing, fully functional restaurant website featuring menu showcasing, chef specials, online reservations, and customer feedback system. Built with a modern tech stack ensuring responsive design and seamless user experience.',
-      technologies: ['ReactJS', 'Node.js', 'Express.js', 'MongoDB', 'CSS3'],
-      features: [
-        'Responsive and visually appealing interface',
-        'Online reservation system',
-        'Menu showcase with categories',
-        'Customer feedback collection',
-        'Admin dashboard for management',
-        'Real-time updates and notifications',
-      ],
-      icon: Video,
-      color: '#FFB800',
-      liveUrl: '#',
-    },
-    {
-      id: 'hrm-wicksignals',
-      title: 'HRM for WickSignals',
-      shortDesc: 'HR Management system with analytics dashboard',
-      fullDesc: 'A comprehensive HR Relationship Management system developed for WickSignals. Features include lead tracking, customer data management, sales performance analytics, and robust reporting capabilities. The system streamlines operations and enhances business efficiency through real-time data access.',
-      technologies: ['ReactJS', 'Node.js', 'Express.js', 'MongoDB', 'Power BI'],
-      features: [
-        'Modern dashboard for lead tracking',
-        'Customer data management',
-        'Sales performance analytics',
-        'Robust API for data operations',
-        'Scalable MongoDB structure',
-        'Real-time reporting and insights',
-      ],
-      icon: ExternalLink,
-      color: '#00F0FF',
-    },
-  ];
+const projects: Project[] = [
+  {
+    id: 'synthera',
+    title: 'Synthera',
+    shortDesc: 'Solana-powered AI model marketplace with NFT royalties',
+    fullDesc: 'Synthera is a Solana-powered AI model marketplace where developers can mint, sell, and license AI models as NFTs with automatic royalty distribution.',
+    technologies: ['Solana', 'React', 'TypeScript', 'AI/ML', 'Next.js', 'NFTs', 'Blockchain'],
+    features: [
+      'Mint and sell AI models as NFTs',
+      'Automatic royalty distribution',
+      'Secure blockchain-based transactions',
+      'Marketplace for AI developers',
+    ],
+    icon: Code2,
+    color: '#00F0FF',
+    liveUrl: 'https://synthera-kappa.vercel.app/',
+    githubUrl: 'https://github.com/darshansharma19',
+  },
+  {
+    id: 'safaai-setu',
+    title: 'Safaai Setu',
+    shortDesc: 'Smart doorstep waste collection platform',
+    fullDesc: 'Safaai Setu is a smart doorstep waste collection platform developed with the Indore Municipal Corporation. It enables residents to quickly request waste pickups, track requests, and participate in cleanliness initiatives — all in one place.',
+    technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Next.js'],
+    features: [
+      'Request and track waste pickups',
+      'Participate in municipal cleanliness initiatives',
+      'User-friendly web interface',
+      'Real-time status updates for residents',
+    ],
+    icon: Shield,
+    color: '#FF0055',
+    liveUrl: 'https://safaai-setu.vercel.app/',
+    githubUrl: 'https://github.com/darshansharma19',
+  },
+  {
+    id: 'e-nirvachan',
+    title: 'E-Nirvachan',
+    shortDesc: 'Decentralized blockchain voting app',
+    fullDesc: 'E-Nirvachan is a decentralized voting platform leveraging blockchain technology to ensure secure, transparent, and tamper-proof elections. Built with React, Flask, and Tailwind CSS, it offers a seamless experience for casting votes and viewing analytics.',
+    technologies: ['React', 'Flask', 'Python', 'Tailwind CSS', 'Blockchain', 'Vite'],
+    features: [
+      'Secure blockchain-based voting',
+      'Real-time voting analytics dashboard',
+      'Blockchain visualization of all transactions and blocks',
+      'Responsive and user-friendly UI',
+    ],
+    icon: ExternalLink,
+    color: '#00F0FF',
+    liveUrl: 'https://github.com/darshansharma19/-e-Nirvachan',
+    githubUrl: 'https://github.com/darshansharma19/-e-Nirvachan',
+  },
+];
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(

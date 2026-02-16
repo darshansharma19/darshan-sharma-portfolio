@@ -16,79 +16,51 @@ const Experience = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [lineProgress, setLineProgress] = useState(0);
 
-  const experiences: ExperienceItem[] = [
-    {
-      title: 'Trainee Software Developer',
-      company: 'BluCursor Infotech',
-      location: 'On-site',
-      period: 'June 2025 – September 2025',
-      description: [
-        'Worked on AI-powered surveillance and real-time video analytics systems',
-        'Developed and optimized pipelines using NVIDIA DeepStream SDK',
-        'Built Python-based processing modules for real-time object detection and event tracking',
-        'Integrated AI inference models into scalable video processing workflows',
-        'Improved system performance and latency for live video streams',
-      ],
-      technologies: ['Python', 'NVIDIA DeepStream', 'OpenCV', 'AI/ML'],
-      type: 'work',
-    },
-    {
-      title: 'Software Engineer (Freelance)',
-      company: 'OpSoftware',
-      location: 'Remote',
-      period: 'October 2024 – January 2025',
-      description: [
-        'Built OpSoftware, an inventory and billing platform for a Canadian client',
-        'Developed intuitive and responsive user interface using React and Next.js',
-        'Incorporated custom features based on client workflow requirements',
-        'Successfully deployed application on secure and scalable hosting platform',
-      ],
-      technologies: ['React', 'Next.js', 'Node.js', 'MongoDB'],
-      type: 'freelance',
-    },
-    {
-      title: 'Intern - Full Stack & Data Science',
-      company: 'BotMartz IT Solution',
-      location: 'Hybrid',
-      period: 'May 2023 – September 2024',
-      description: [
-        'Developed Flavour Trail - a fully functional restaurant website with responsive interface',
-        'Built HRM system for WickSignals with modern dashboard for lead tracking and analytics',
-        'Implemented server-side logic for handling form submissions and reservations',
-        'Created scalable MongoDB structure for efficient client and sales data storage',
-      ],
-      technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Power BI'],
-      type: 'internship',
-    },
-    {
-      title: 'Python Code Evaluator',
-      company: 'Outlier AI',
-      location: 'Remote',
-      period: 'June 2024 – September 2024',
-      description: [
-        'Evaluated and improved AI-generated Python code for correctness and efficiency',
-        'Refined and validated 500+ Computer Science questions',
-        'Identified logical inconsistencies and edge-case failures',
-        'Provided structured technical feedback to improve model outputs',
-      ],
-      technologies: ['Python', 'AI Evaluation', 'Code Review'],
-      type: 'freelance',
-    },
-    {
-      title: 'API & Pipeline Evaluator',
-      company: 'Aligner',
-      location: 'Remote',
-      period: 'Ongoing',
-      description: [
-        'Evaluated AI APIs and data pipelines for performance and reliability',
-        'Conducted structured testing to ensure robustness under various workloads',
-        'Analyzed response accuracy, latency, and scalability metrics',
-        'Contributed to quality assurance for AI-driven systems',
-      ],
-      technologies: ['API Testing', 'Data Pipelines', 'QA'],
-      type: 'freelance',
-    },
-  ];
+ const experiences: ExperienceItem[] = [
+  {
+    title: 'Trainee Software Developer',
+    company: 'BluCursor Infotech',
+    location: 'On-site',
+    period: 'July 2025 – September 2025',
+    description: [
+      'Worked on AI-powered surveillance and real-time video analytics systems',
+      'Developed and optimized pipelines using NVIDIA DeepStream SDK',
+      'Built Python-based modules for real-time object detection, tracking, and event processing',
+      'Integrated AI/ML inference models into scalable video processing workflows',
+      'Improved system performance, latency, and resource efficiency for live video streams',
+    ],
+    technologies: ['Python', 'NVIDIA DeepStream', 'OpenCV', 'AI/ML', 'Docker', 'TensorFlow', 'PyTorch', 'React', 'Next.js', 'Node.js', 'TypeScript'],
+    type: 'work',
+  },
+  {
+    title: 'Python Code Evaluator',
+    company: 'Outlier AI',
+    location: 'Remote',
+    period: 'January 2025 – June 2025',
+    description: [
+      'Evaluated and improved AI-generated Python code for correctness and efficiency',
+      'Refined and validated 500+ Computer Science questions',
+      'Identified logical inconsistencies and edge-case failures',
+      'Provided structured technical feedback to improve model outputs',
+    ],
+    technologies: ['Python', 'AI/ML', 'TensorFlow', 'PyTorch'],
+    type: 'freelance',
+  },
+  {
+    title: 'API & Pipeline Evaluator',
+    company: 'Aligner',
+    location: 'Remote',
+    period: 'January 2025 – Ongoing',
+    description: [
+      'Evaluated AI APIs and data pipelines for performance and reliability',
+      'Conducted structured testing to ensure robustness under various workloads',
+      'Analyzed response accuracy, latency, and scalability metrics',
+      'Contributed to quality assurance for AI-driven systems',
+    ],
+    technologies: ['Python', 'AI/ML', 'Docker'],
+    type: 'freelance',
+  },
+];
 
   useEffect(() => {
     const observer = new IntersectionObserver(

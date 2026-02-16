@@ -10,7 +10,7 @@ const Hero = () => {
   const nameRef = useRef<HTMLHeadingElement>(null);
 
   const fullName = 'DARSHAN SHARMA';
-  const fullTitle = 'FULL STACK DEV // AI ENGINEER';
+  const fullTitle = 'Software Engineer ';
 
   // Scramble text effect
   const scrambleText = (text: string, setText: (text: string) => void, delay: number = 0) => {

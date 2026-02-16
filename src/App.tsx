@@ -49,9 +49,9 @@ function App() {
       >
         <Hero />
         <About />
-        <Skills />
         <Experience />
         <Projects />
+         <Skills />
         <Achievements />
         <Contact />
       </main>
